@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,10 +18,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     EditText confirmedPass;
     Button register;
     TextView loginBtn;
+    private static final String Salma = "Register Activity";  // Define the Salma variable
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(Salma,"Create is called");
         setContentView(R.layout.activity_register);
 
         loginBtn = findViewById(R.id.btnToLogin);
@@ -61,5 +64,40 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
 
+    }
+
+    protected void onStart() {
+        super.onStart();
+        Log.d(Salma, "onStart: called");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(Salma, "onResume: called");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(Salma, "onPause: called");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(Salma, "onStop: called");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(Salma, "onDestroy: called");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(Salma, "onRestart: called");
     }
 }
